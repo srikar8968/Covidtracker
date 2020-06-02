@@ -117,7 +117,8 @@ function createDOM(res) {
 		let nodeBodyTr = document.createElement('tr');
 		nodeBodyTr.setAttribute('data-country', data[key].Slug);
 		nodeBodyTr.setAttribute('data-updated', data[key].Date);
-		nodeBodyTr.addEventListener('click', function(){ alert(nodeBodyTr.getAttribute('data-country')) });
+		nodeBodyTr.setAttribute('data-code', data[key].CountryCode);
+		nodeBodyTr.addEventListener('click', function(){ getByCountry(nodeBodyTr) });
 		for(let i in tblHeaders){
 			let nodeBodyTd = document.createElement('td');
 			if(tblHeaders[i].name === 'Active'){
@@ -141,6 +142,14 @@ function createDOM(res) {
 
 	nodeTable.appendChild(nodeBodyTg);
 	nodeParent.appendChild(nodeTable);
+}
+
+function getByCountry(node){
+	const country = node.getAttribute('data-country');
+	const date = node.getAttribute('data-updated');
+	const code = node.getAttribute('data-code');
+	var content = `Country: "` + country + `"\nCountryCode: "` + code + `"\nLast updated: "` + date + `"`;
+	alert(content);
 }
 
 function addSpanDOM(val, color){
@@ -186,4 +195,3 @@ function getUpdatedDate(){
 
 getUpdatedDate();
 getResults();
-
