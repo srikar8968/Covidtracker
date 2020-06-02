@@ -1,0 +1,17 @@
+{
+  "name": "gcovid",
+  "version": "1.0.0",
+  "description": "Get covid case all around the world",
+  "main": "index.js",
+  "scripts": {
+    "build": "purgecss --css css/bootstrap.min.css,css/app.css --content index.html,index.js --output dist/"
+  },
+  "author": "srikar",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "purgecss": "^2.2.1"
+  }
+}
