@@ -33,8 +33,7 @@ body{
 	background-color: #1c1c2b;
 }
 .cvd__tbl tbody>tr>td>span{
-	display: inline-block;
-	margin-right: .5rem;
+	display: block;
 }
 .cvd__tbl thead>tr>th, .cvd__tbl tbody>tr>td{
 	color: #6c757d;
