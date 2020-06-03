@@ -83,7 +83,7 @@ function getResults(){
 }
 
 function createGlobalSummary(res){
-	//console.log(res.Date);
+	// console.log(res.Date);
 	const data = res.Global;
 	document.getElementById('stat__total').innerHTML = number_format(data.TotalConfirmed);
 	document.getElementById('stat__total__new').innerHTML = '+ ' + number_format(data.NewConfirmed);
@@ -156,7 +156,7 @@ function getByCountry(node){
 
 function addSpanDOM(val, color){
 	let nodeBodySpn = document.createElement('span');
-	if(val > 0){
+	if(parseInt(val) > 0){
 		const spnTxt = '+' + number_format(val, 0);
 		let nodeBodyExtTxt = document.createTextNode(spnTxt);
 		nodeBodySpn.className = 'text-' + color + ' mr-sm-1 d-sm-inline-block';
