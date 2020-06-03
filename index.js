@@ -70,6 +70,7 @@ function getResults(){
 	axiosCovid.get('/summary')
 	.then(res => {
 		nodeParent.style.display = 'block';
+		getUpdatedDate(res.data);
 		createGlobalSummary(res.data);
 		createDOM(res.data)
 	})
@@ -82,6 +83,7 @@ function getResults(){
 }
 
 function createGlobalSummary(res){
+	//console.log(res.Date);
 	const data = res.Global;
 	document.getElementById('stat__total').innerHTML = number_format(data.TotalConfirmed);
 	document.getElementById('stat__total__new').innerHTML = '+ ' + number_format(data.NewConfirmed);
@@ -187,12 +189,11 @@ function number_format (number, decimals, dec_point, thousands_sep) {
     return s.join(dec);
 }
 
-function getUpdatedDate(){
+function getUpdatedDate(res){
 	var node = document.getElementById('lst_updated');
-	const updatedDate = new Date();
+	const updatedDate = new Date(res.Date);
 	node.innerHTML = updatedDate.toGMTString();
 }
 
-getUpdatedDate();
 getResults();
 
