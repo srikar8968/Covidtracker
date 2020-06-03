@@ -14,7 +14,7 @@
 </head>
 <body class="bg-darker">
 	<header id="cvdNav" class="slide-down">
-		<nav class="navbar navbar-expand-sm navbar-dark bg-darker justify-content-between py-3 px-4">
+		<nav class="navbar navbar-expand-sm navbar-dark bg-darker justify-content-between py-3 px-3 px-sm-4">
 		  	<a id="portfolioLogo" class="navbar-brand text-secondary d-flex align-items-center" href="javascript:void(0)" onclick="getResults(">
 		  		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"><path fill="#1e1e30" d="M4.06 13a8 8 0 0 0 5.18 6.51A18.5 18.5 0 0 1 8.02 13H4.06zm0-2h3.96a18.5 18.5 0 0 1 1.22-6.51A8 8 0 0 0 4.06 11zm15.88 0a8 8 0 0 0-5.18-6.51A18.5 18.5 0 0 1 15.98 11h3.96zm0 2h-3.96a18.5 18.5 0 0 1-1.22 6.51A8 8 0 0 0 19.94 13zm-9.92 0c.16 3.95 1.23 7 1.98 7s1.82-3.05 1.98-7h-3.96zm0-2h3.96c-.16-3.95-1.23-7-1.98-7s-1.82 3.05-1.98 7zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"/></svg>
 		  		<span class="ml-2 font-weight-light">Covid19&nbsp;<small class="text-danger">Global</small></span>
@@ -24,52 +24,53 @@
 		  	</div>
 		</nav>
 	</header>
-	<div class="cvd__pg slide-down">
+	<div class="cvd__pg">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="search__container position-relative col-12 col-md-8">
 					<input type="text" class="form-control border-0 bg-dark search" placeholder="Search is in development">
 				</div>
 			</div>
-			<div class="row global__summary mt-3">
+			<div class="row slide-down no-gutters global__summary mt-3">
 				<div class="col-12">
-					<div class="d-flex align-items-center justify-content-center mb-3">
+					<div class="d-flex align-items-center justify-content-center mb-2">
 						<span class="text-secondary mr-3" id="lst_updated"></span>
 						<button onclick="getResults()" class="btn btn-link font-weight-light btn-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#585e69" d="M6 18.7V21a1 1 0 0 1-2 0v-5a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2H7.1A7 7 0 0 0 19 12a1 1 0 1 1 2 0 9 9 0 0 1-15 6.7zM18 5.3V3a1 1 0 0 1 2 0v5a1 1 0 0 1-1 1h-5a1 1 0 0 1 0-2h2.9A7 7 0 0 0 5 12a1 1 0 1 1-2 0 9 9 0 0 1 15-6.7z"/></svg></button>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3 px-3 py-2 px-sm-2 py-sm-2">
-					<div class="cdv__stats bg-danger-tr text-danger p-3 rounded">
+				<div class="col-6 col-md-3 px-1 py-1 px-sm-2 py-sm-2">
+					<div class="cdv__stats bg-danger-tr text-danger p-2 p-sm-3 rounded">
 						<small>Confirmed</small>
 						<span id="stat__total" class="d-block h3">0</span>
-						<span id="stat__total__new">+ 0</span>
+						<span id="stat__total__new">Loading...</span>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3 px-3 py-2 px-sm-2 py-sm-2">
-					<div class="cdv__stats active bg-primary-tr text-primary p-3 rounded">
+				<div class="col-6 col-md-3 px-1 py-1 px-sm-2 py-sm-2">
+					<div class="cdv__stats active bg-primary-tr text-primary p-2 p-sm-3 rounded">
 						<small>Active</small>
 						<span id="stat__active" class="d-block h3">0</span>
-						<span id="stat__active__new">+ 0</span>
+						<span id="stat__active__new">Loading...</span>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3 px-3 py-2 px-sm-2 py-sm-2">
-					<div class="cdv__stats recovered bg-success-tr text-success p-3 rounded">
+				<div class="col-6 col-md-3 px-1 py-1 px-sm-2 py-sm-2">
+					<div class="cdv__stats recovered bg-success-tr text-success p-2 p-sm-3 rounded">
 						<small>Recovered</small>
 						<span id="stat__recovered" class="d-block h3">0</span>
-						<span id="stat__recovered__new">+ 0</span>
+						<span id="stat__recovered__new">Loading...</span>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3 px-3 py-2 px-sm-2 py-sm-2">
-					<div class="cdv__stats deceased bg-secondary-tr text-secondary p-3 rounded">
+				<div class="col-6 col-md-3 px-1 py-1 px-sm-2 py-sm-2">
+					<div class="cdv__stats deceased bg-secondary-tr text-secondary p-2 p-sm-3 rounded">
 						<small>Deceased</small>
 						<span id="stat__deceased" class="d-block h3">0</span>
-						<span id="stat__deceased__new">+ 0</span>
+						<span id="stat__deceased__new">Loading...</span>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-12">
-					<div id="covid_tbl_view" class="mt-4 mt-md-5 table-responsive" style="display: none;"></div>
+			<div class="row mt-2">
+				<div class="col-12 text-right">
+					<small class="text-secondary pr-2">Api used <a href="https://covid19api.com/" target="_blank" rel="nofollow">covid19api.com</a></small>
+					<div id="covid_tbl_view" class="table-responsive slide-down" style="display: none;"></div>
 				</div>
 				<div class="col-12">
 					<div id="err__section" class="p-5 w-100 text-center" style="display: none;">
@@ -84,5 +85,6 @@
 	</div>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script type="text/javascript" src="./index.js"></script>
+	<!-- <script type="text/javascript" src="./weather.js"></script> -->
 </body>
 </html>
