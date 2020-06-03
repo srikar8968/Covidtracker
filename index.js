@@ -157,7 +157,7 @@ function addSpanDOM(val, color){
 	if(val > 0){
 		const spnTxt = '+' + number_format(val, 0);
 		let nodeBodyExtTxt = document.createTextNode(spnTxt);
-		nodeBodySpn.className = 'text-' + color;
+		nodeBodySpn.className = 'text-' + color + ' mr-sm-1 d-sm-inline-block';
 		nodeBodySpn.appendChild(nodeBodyExtTxt);
 	}
 	return nodeBodySpn;
@@ -195,3 +195,4 @@ function getUpdatedDate(){
 
 getUpdatedDate();
 getResults();
+
